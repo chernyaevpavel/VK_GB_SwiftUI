@@ -8,30 +8,35 @@
 import SwiftUI
 
 struct UserCellView: View {
-    @State var name: String = "Иванов Петр Сидорович"
-    @State var status: String = "offLine"
+    let user: User
     
     var body: some View {
         HStack {
-            Image("dog")
+            Image(self.user.photo)
                 .resizable()
                 .avatarModifier()
+            
             VStack(alignment: .leading) {
-                Text("\(name)")
+                Text("\(self.user.firstName) \(self.user.lastName)")
                     .font(.body)
-                Text("\(status)")
+            
+                Text("\(self.user.status.rawValue)")
                     .font(.subheadline)
-                    .foregroundColor(Color.red)
+                    .statusColorModifire(status: self.user.status)
             }
             
             Spacer()
         }
-        .border(Color.gray)
+        .padding(.init(top: 6,
+                       leading: 0,
+                       bottom: 6,
+                       trailing: 0))
     }
 }
 
 struct UserCellView_Previews: PreviewProvider {
     static var previews: some View {
-        UserCellView()
+        let user = User(id: 0, firstName: "Иванов", lastName: "Александр", photo: "dog", status: .onLine)
+        UserCellView(user: user)
     }
 }
