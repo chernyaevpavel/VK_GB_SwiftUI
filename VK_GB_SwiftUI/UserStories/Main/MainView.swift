@@ -14,18 +14,19 @@ enum Tabs: String {
 }
 
 struct MainView: View {
-    
     @State var selectedTab: Tabs = .friends
+    let apiService = APIService()
     
     var body: some View {
         
         TabView(selection: $selectedTab) {
-            
-            UsersListView()
+            let userViewModel = UserViewModel(apiService: apiService)
+            UsersListView(viewModel: userViewModel)
                 .tabItem { Label("Друзья", systemImage: "person.2.fill") }
                 .tag(Tabs.friends)
             
-            GroupsListView()
+            let groupViewModel = GroupViewModel(apiService: apiService)
+            GroupsListView(viewModel: groupViewModel)
                 .tabItem { Label("Группы", systemImage: "person.3.fill") }
                 .tag(Tabs.groups)
             
@@ -35,13 +36,5 @@ struct MainView: View {
         }
         .navigationTitle(selectedTab.rawValue)
         .navigationBarBackButtonHidden(true)
-        
-        
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }

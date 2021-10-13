@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
+          "version": "5.4.4"
+        }
+      },
+      {
         "package": "ASCollectionView",
         "repositoryURL": "https://github.com/apptekstudios/ASCollectionView",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "62745d7780deef4a023a792a1f8f763ec7bf9705",
           "version": "1.2.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "state": {
+          "branch": null,
+          "revision": "630cc7e82f2f0b4c6c3950e78c4b8b559008a023",
+          "version": "7.1.0"
         }
       }
     ]
