@@ -15,8 +15,8 @@ struct ContentView: View {
         NavigationView {
             HStack {
                 
-                LoginView(isLoginComplete: $isLoginComplete)
-                
+                LoginWebView(isLoginComplete: $isLoginComplete)
+
                 NavigationLink(
                     destination: MainView(),
                     isActive: self.$isLoginComplete,
@@ -25,7 +25,7 @@ struct ContentView: View {
                     })
                     
             }
-            .navigationBarHidden(true)   
+            .navigationBarHidden(true)
         }
     }
 }

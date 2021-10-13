@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct GroupCellView: View {
     let group: Group
     
     var body: some View {
         HStack {
-            Image(self.group.photo)
+            let url = URL(string: self.group.photo200!)
+            KFImage(url)
+                .cancelOnDisappear(true)
                 .resizable()
                 .avatarModifier()
             
@@ -25,12 +28,5 @@ struct GroupCellView: View {
                        leading: 0,
                        bottom: 6,
                        trailing: 0))
-    }
-}
-
-struct GroupCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        let group = Group(id: 0, name: "Авто мото вело фото", photo: "groupAvatar")
-        GroupCellView(group: group)
     }
 }
