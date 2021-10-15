@@ -13,11 +13,11 @@ struct GroupCellView: View {
     
     var body: some View {
         HStack {
-            let url = URL(string: self.group.photo200!)
-            KFImage(url)
+            KFImage(self.group.photo200)
                 .cancelOnDisappear(true)
                 .resizable()
                 .avatarModifier()
+                .avatarTapAnimationModifier()
             
             Text("\(self.group.name)")
                 .font(.body)
