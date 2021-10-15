@@ -13,11 +13,11 @@ struct UserCellView: View {
     
     var body: some View {
         HStack {
-            let url = URL(string: self.user.photo200_Orig!)
-            KFImage(url)
+            KFImage(self.user.photo200Orig)
                 .cancelOnDisappear(true)
                 .resizable()
                 .avatarModifier()
+                .avatarTapAnimationModifier()
             
             VStack(alignment: .leading) {
                 Text("\(self.user.firstName) \(self.user.lastName)")
