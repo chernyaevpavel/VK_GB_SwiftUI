@@ -17,9 +17,6 @@ struct LikeView: View {
     @State private var opacity = 1.0
     @State private var degress = 0.0
     
-    init(viewModel: LikeViewModel) {
-        self.viewModel = viewModel
-    }
     
     var body: some View {
         HStack {
