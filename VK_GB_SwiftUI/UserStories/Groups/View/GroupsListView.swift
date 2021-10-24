@@ -11,10 +11,6 @@ struct GroupsListView: View {
     
     @ObservedObject var viewModel: GroupViewModel
     
-    init(viewModel: GroupViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {
         
         List(self.viewModel.groups) { group in

@@ -19,28 +19,8 @@ struct ResponseGroup: Codable {
 }
 
 // MARK: - Item
-class Group: Codable, Identifiable {
+struct Group: Codable, Identifiable {
     var id: Int
     var name: String
-    var photo200: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case photo200 = "photo_200"
-        case name
-    }
-    
+    var photo200: URL
 }
-//
-//
-//class Group: Identifiable {
-//    let id: Int
-//    let name: String
-//    let photo: String
-//
-//    init(id: Int, name: String, photo: String = "") {
-//        self.id = id
-//        self.name = name
-//        self.photo = photo
-//    }
-//}

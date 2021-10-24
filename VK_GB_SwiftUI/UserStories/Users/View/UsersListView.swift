@@ -12,10 +12,6 @@ struct UsersListView: View {
     
     @ObservedObject var viewModel: UserViewModel
     
-    init(viewModel: UserViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {        
         List(self.viewModel.users) { user in
             NavigationLink(

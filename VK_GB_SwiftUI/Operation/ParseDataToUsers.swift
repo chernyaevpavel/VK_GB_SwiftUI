@@ -14,7 +14,9 @@ class ParseDataToUsers: Operation {
         guard let getDataOperation = dependencies.first as? GetDataOperation,
               let data = getDataOperation.data
         else { return }
-        let friendsResponse = try? JSONDecoder().decode(Friends.self, from: data)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let friendsResponse = try? jsonDecoder.decode(Friends.self, from: data)
         guard let users = friendsResponse?.response.items else { return }
         self.users = users
     }

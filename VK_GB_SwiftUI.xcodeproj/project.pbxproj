@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B61050272719A78C00BD5DB5 /* AvatarTapAnimationModifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61050262719A78C00BD5DB5 /* AvatarTapAnimationModifire.swift */; };
+		B610502C271A063700BD5DB5 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610502B271A063700BD5DB5 /* LikeView.swift */; };
+		B610502E271A068700BD5DB5 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610502D271A068700BD5DB5 /* LikeViewModel.swift */; };
 		B618EC0827146051000D32DA /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = B618EC0727146051000D32DA /* ASCollectionView */; };
 		B618EC0A27146227000D32DA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618EC0927146227000D32DA /* Photo.swift */; };
 		B646342427175EFF0029AC10 /* CodingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646342327175EFF0029AC10 /* CodingStyle.swift */; };
@@ -53,6 +56,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B61050262719A78C00BD5DB5 /* AvatarTapAnimationModifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTapAnimationModifire.swift; sourceTree = "<group>"; };
+		B610502B271A063700BD5DB5 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
+		B610502D271A068700BD5DB5 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
 		B618EC0927146227000D32DA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B646342327175EFF0029AC10 /* CodingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingStyle.swift; sourceTree = "<group>"; };
 		B669030927156E410015A40D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -98,6 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6105028271A061000BD5DB5 /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				B610502A271A062300BD5DB5 /* ViewModel */,
+				B6105029271A061800BD5DB5 /* View */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
+		B6105029271A061800BD5DB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B610502B271A063700BD5DB5 /* LikeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B610502A271A062300BD5DB5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B610502D271A068700BD5DB5 /* LikeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B646342227175EE10029AC10 /* PropertyWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +140,7 @@
 		B669030727156E0A0015A40D /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				B6105028271A061000BD5DB5 /* Like */,
 				B669030B27156E820015A40D /* Login */,
 				B6CF8F94270D906E00C8DC15 /* Main */,
 				B6CF8F95270D907B00C8DC15 /* Users */,
@@ -234,6 +266,7 @@
 			children = (
 				B6CF8F92270D903B00C8DC15 /* AvatarModifier.swift */,
 				B6CF8FA02713302E00C8DC15 /* StatusColorModifire.swift */,
+				B61050262719A78C00BD5DB5 /* AvatarTapAnimationModifire.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -365,11 +398,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B610502C271A063700BD5DB5 /* LikeView.swift in Sources */,
 				B618EC0A27146227000D32DA /* Photo.swift in Sources */,
 				B66903102715B5C20015A40D /* APIService.swift in Sources */,
 				B669030E27156EFB0015A40D /* LoginWebView.swift in Sources */,
 				B669030A27156E410015A40D /* Session.swift in Sources */,
+				B61050272719A78C00BD5DB5 /* AvatarTapAnimationModifire.swift in Sources */,
 				B6B34DDF270C338A00C588DF /* LoginView.swift in Sources */,
+				B610502E271A068700BD5DB5 /* LikeViewModel.swift in Sources */,
 				B669031A2715BA570015A40D /* ParseDataToUsers.swift in Sources */,
 				B6CF8FAB2713635D00C8DC15 /* ContentView.swift in Sources */,
 				B6CF8F93270D903B00C8DC15 /* AvatarModifier.swift in Sources */,
