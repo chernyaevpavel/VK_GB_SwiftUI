@@ -19,7 +19,6 @@ struct ContentView: View {
                 
                 NavigationLink(
                     destination: MainUIKit()
-                        //                    destination: MainView()
                         .navigationBarBackButtonHidden(true),
                     isActive: self.$isLoginComplete,
                     label: {
