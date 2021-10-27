@@ -11,18 +11,19 @@ import Combine
 struct UsersListView: View {
     
     @ObservedObject var viewModel: UserViewModel
+    let apiService = APIService()
     
-    var body: some View {        
+    var body: some View {
         List(self.viewModel.users) { user in
+            let userGalleryViewModel = UserGalleryViewModel(apiService: apiService, user: user)
             NavigationLink(
-                destination: UserGalleryView(user: user),
+                destination: UserGalleryView(viewModel: userGalleryViewModel),
                 label: {
                     UserCellView(user: user)
                 })
         }.onAppear{
             viewModel.getUsers()
         }
-        
     }
 }
 

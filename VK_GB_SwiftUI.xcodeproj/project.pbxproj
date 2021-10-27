@@ -11,8 +11,10 @@
 		B610502C271A063700BD5DB5 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610502B271A063700BD5DB5 /* LikeView.swift */; };
 		B610502E271A068700BD5DB5 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610502D271A068700BD5DB5 /* LikeViewModel.swift */; };
 		B618EC0827146051000D32DA /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = B618EC0727146051000D32DA /* ASCollectionView */; };
-		B618EC0A27146227000D32DA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618EC0927146227000D32DA /* Photo.swift */; };
 		B646342427175EFF0029AC10 /* CodingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646342327175EFF0029AC10 /* CodingStyle.swift */; };
+		B657E7BB272734CB00E45583 /* UserGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657E7BA272734CB00E45583 /* UserGalleryViewModel.swift */; };
+		B657E7BE2727443000E45583 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657E7BD2727443000E45583 /* Data.swift */; };
+		B657E7C02728509400E45583 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657E7BF2728509400E45583 /* Photo.swift */; };
 		B669030A27156E410015A40D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669030927156E410015A40D /* Session.swift */; };
 		B669030E27156EFB0015A40D /* LoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669030D27156EFB0015A40D /* LoginWebView.swift */; };
 		B66903102715B5C20015A40D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669030F2715B5C20015A40D /* APIService.swift */; };
@@ -61,8 +63,10 @@
 		B61050262719A78C00BD5DB5 /* AvatarTapAnimationModifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTapAnimationModifire.swift; sourceTree = "<group>"; };
 		B610502B271A063700BD5DB5 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		B610502D271A068700BD5DB5 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
-		B618EC0927146227000D32DA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B646342327175EFF0029AC10 /* CodingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingStyle.swift; sourceTree = "<group>"; };
+		B657E7BA272734CB00E45583 /* UserGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGalleryViewModel.swift; sourceTree = "<group>"; };
+		B657E7BD2727443000E45583 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		B657E7BF2728509400E45583 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B669030927156E410015A40D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B669030D27156EFB0015A40D /* LoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebView.swift; sourceTree = "<group>"; };
 		B669030F2715B5C20015A40D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -141,6 +145,14 @@
 			path = PropertyWrapper;
 			sourceTree = "<group>";
 		};
+		B657E7BC2727442100E45583 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B657E7BD2727443000E45583 /* Data.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B669030727156E0A0015A40D /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				B66903202715C5A50015A40D /* UserViewModel.swift */,
+				B657E7BA272734CB00E45583 /* UserGalleryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -244,6 +257,7 @@
 		B6B34DDB270C338A00C588DF /* VK_GB_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B657E7BC2727442100E45583 /* Extension */,
 				B646342227175EE10029AC10 /* PropertyWrapper */,
 				B66903142715B9BB0015A40D /* Operation */,
 				B669030827156E330015A40D /* Services */,
@@ -311,7 +325,7 @@
 				B6CF8F9A2713225800C8DC15 /* User.swift */,
 				B6CF8F9C2713239B00C8DC15 /* Status.swift */,
 				B6CF8F9E271323BD00C8DC15 /* Group.swift */,
-				B618EC0927146227000D32DA /* Photo.swift */,
+				B657E7BF2728509400E45583 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,7 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B610502C271A063700BD5DB5 /* LikeView.swift in Sources */,
-				B618EC0A27146227000D32DA /* Photo.swift in Sources */,
 				B66903102715B5C20015A40D /* APIService.swift in Sources */,
 				B669030E27156EFB0015A40D /* LoginWebView.swift in Sources */,
 				B669030A27156E410015A40D /* Session.swift in Sources */,
@@ -422,6 +435,7 @@
 				B6CF8FAF271376C100C8DC15 /* GroupsListView.swift in Sources */,
 				B66903212715C5A50015A40D /* UserViewModel.swift in Sources */,
 				B6CF8F9D2713239B00C8DC15 /* Status.swift in Sources */,
+				B657E7C02728509400E45583 /* Photo.swift in Sources */,
 				B66903182715BA060015A40D /* GetDataOperation.swift in Sources */,
 				B6CF8FB427144C5D00C8DC15 /* UserGalleryView.swift in Sources */,
 				B6CF8FA5271354A500C8DC15 /* MainView.swift in Sources */,
@@ -430,10 +444,12 @@
 				B6CF8FAD27136E4E00C8DC15 /* UsersListView.swift in Sources */,
 				B6E99F7B270D83D700F0895C /* UserCellView.swift in Sources */,
 				B646342427175EFF0029AC10 /* CodingStyle.swift in Sources */,
+				B657E7BB272734CB00E45583 /* UserGalleryViewModel.swift in Sources */,
 				B6B34DDD270C338A00C588DF /* VK_GB_SwiftUIApp.swift in Sources */,
 				B6CF8F98270D90BD00C8DC15 /* GroupCellView.swift in Sources */,
 				B66903162715B9DB0015A40D /* AsyncOperation.swift in Sources */,
 				B6CF8FA12713302E00C8DC15 /* StatusColorModifire.swift in Sources */,
+				B657E7BE2727443000E45583 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

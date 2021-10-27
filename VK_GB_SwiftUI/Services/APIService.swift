@@ -66,6 +66,48 @@ class APIService {
         }
     }
     
+    func getPhotos(ownerID: String, completion: @escaping([Photo])->()){
+        let path = "/method/photos.getAll"
+        let queryItems = [
+            URLQueryItem(name: "owner_id", value: ownerID),
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "offset", value: ""),
+            URLQueryItem(name: "count", value: "200"),
+            URLQueryItem(name: "photo_sizes", value: "0"),
+            URLQueryItem(name: "no_service_albums", value: "0"),
+            URLQueryItem(name: "need_hidden", value: "0"),
+            URLQueryItem(name: "skip_hidden", value: "1")
+        ]
+        
+        if let urlConstructor = makeURLConstructor(path, queryItems) {
+            let configuration = URLSessionConfiguration.default
+            let session =  URLSession(configuration: configuration)
+            let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+                guard let dataResp = data else { return }
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let photoResponse = try jsonDecoder.decode(FullResponsePhoto.self, from: dataResp)
+                    let photos = photoResponse.response.items
+                    DispatchQueue.main.async {
+                        completion(photos)
+                    }
+                } catch DecodingError.dataCorrupted(let context) {
+                    print(DecodingError.dataCorrupted(context))
+                } catch DecodingError.keyNotFound(let key, let context) {
+                    print(DecodingError.keyNotFound(key,context))
+                } catch DecodingError.typeMismatch(let type, let context) {
+                    print(DecodingError.typeMismatch(type,context))
+                } catch DecodingError.valueNotFound(let value, let context) {
+                    print(DecodingError.valueNotFound(value,context))
+                } catch let error{
+                    print(error)
+                }
+            }
+            task.resume()
+        }
+    }
+    
     static func makeAuthURLRequest() -> URLRequest {
         
         var urlComponents = URLComponents()
@@ -81,7 +123,7 @@ class APIService {
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.68")
         ]
-
+        
         let request = URLRequest(url: urlComponents.url!)
         
         return request
