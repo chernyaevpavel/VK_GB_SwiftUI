@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserCellView: View {
     let user: User
     
     var body: some View {
         HStack {
-            Image(self.user.photo)
+            let url = URL(string: self.user.photo200_Orig!)
+            KFImage(url)
+                .cancelOnDisappear(true)
                 .resizable()
                 .avatarModifier()
             
@@ -31,12 +34,5 @@ struct UserCellView: View {
                        leading: 0,
                        bottom: 6,
                        trailing: 0))
-    }
-}
-
-struct UserCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User(id: 0, firstName: "Иванов", lastName: "Александр", photo: "dog", status: .onLine)
-        UserCellView(user: user)
     }
 }
